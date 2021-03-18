@@ -44,19 +44,19 @@ int binaryTreeType<elemType>::treeLeavesCount()
 }
 
 template<class elemType>
-int binaryTreeType<elemType>::leavesCount(nodeType<elemType> *p){
+int binaryTreeType<elemType>::leavesCount(nodeType<elemType> *node){
     //returns nothing if the node is at the end of the tree
     if(node == NULL)
         {return 0;}
 
     else{
         //returns 1 if the node is at a leaf
-        if((p -> rlink == NULL) && (p -> llink == NULL)){
+        if((node -> rlink == NULL) && (node -> llink == NULL)){
             return 1;
         }
         //continues down the list if it is not at a leaf or the end
         else{
-            return leavesCount(p -> rlink) + leavesCount(p -> llink);
+            return leavesCount(node -> rlink) + leavesCount(node -> llink);
         }
     }
 }
