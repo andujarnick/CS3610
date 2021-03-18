@@ -3,6 +3,12 @@
 using namespace std;
 
 template<class elemType>
+arrayListType<elemType>::arrayListType()
+{
+    root = NULL;
+}
+
+template<class elemType>
 void arrayListType<elemType>::heapify(int low, int high)
 {
   int largeIndex;
@@ -22,6 +28,15 @@ void arrayListType<elemType>::heapify(int low, int high)
   list[low]= temp; //insert temp into the tree, that is, list
 }//end heapify
 
+template<class elemType>
+void arrayListType<elemType>::outputArray()
+{
+    for (int i=0; i<20; i++){
+        cout << list[i] << " ";
+        cout << endl;
+    }
+}
+
 template <class elemType>
 void arrayListType<elemType>::buildHeap()
 {
@@ -30,5 +45,9 @@ void arrayListType<elemType>::buildHeap()
 }
 
 int main(){
-
+    
+    arrayListType<int> List;
+    
+    List.buildHeap();
+    List.outputArray();
 }
